@@ -1,0 +1,31 @@
+ST_Datasets:
+  - dataname: nyud
+    noniid: True
+    local_epochs: 4
+    tr_batch: 4
+    val_batch: 4
+    nworkers: 4
+    lr: 0.0001
+    weight_decay: 0.0001
+    warmup_epochs: 5
+    task_dict:
+      semseg: 1
+      normals: 1
+      edge: 1
+      depth: 1
+    
+Model:
+  n_class: 40
+  n_fc: 8
+  dim_latent: 120
+  backbone: resnet18
+
+Hypernetwork:
+  enc_opt:
+    lr: 0.01
+    weight_decay: 0.0001
+    momentum: 0.9
+  dec_opt:
+    lr: 0.01
+    weight_decay: 0.0001
+    momentum: 0.9

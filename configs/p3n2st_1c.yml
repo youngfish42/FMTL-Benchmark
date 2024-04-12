@@ -1,0 +1,35 @@
+ST_Datasets:
+  - dataname: pascalcontext
+    noniid: False
+    local_epochs: 1
+    tr_batch: 4
+    val_batch: 4
+    nworkers: 4
+    lr: 0.0001
+    weight_decay: 0.0001
+    warmup_epochs: 5
+    task_dict:
+      semseg: 1
+      human_parts: 1
+      normals: 1
+      edge: 0
+      sal: 0
+  - dataname: nyud
+    noniid: False
+    local_epochs: 4
+    tr_batch: 4
+    val_batch: 4
+    nworkers: 4
+    lr: 0.0001
+    weight_decay: 0.0001
+    warmup_epochs: 5
+    task_dict:
+      semseg: 1
+      normals: 1
+      edge: 0
+      depth: 0
+
+Model:
+  n_class: 40
+  n_fc: 8
+  dim_latent: 120
